@@ -37,6 +37,8 @@ function setGameElements() {
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
 		  showWinner.style.display = 'block';
+		  playerPointsElem.innerHTML = 0;
+		  computerPointsElem.innerHTML = 0;
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -66,10 +68,6 @@ function newGame() {
 
 }
 
-
-function playerPick(playerPick) {
-    console.log(playerPick);
-}
 function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
     return possiblePicks[Math.floor(Math.random()*3)];
@@ -79,12 +77,7 @@ var playerPickElem = document.getElementById('js-playerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
 
-function playerPick(playerPick) {
-    var computerPick = getComputerPick();
 
-    playerPickElem.innerHTML = playerPick;
-    computerPickElem.innerHTML = computerPick;
-}
 
 function checkRoundWinner(playerPick, computerPick) {
   playerResultElem.innerHTML = computerResultElem.innerHTML = '';
@@ -117,7 +110,6 @@ function playerPick(playerPick) {
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
-
     checkRoundWinner(playerPick, computerPick);
 }
 
