@@ -36,9 +36,11 @@ function setGameElements() {
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
-		  showWinner.style.display = 'block';
-		  playerPointsElem.innerHTML = 0;
-		  computerPointsElem.innerHTML = 0;
+        showWinner.style.display = 'block';
+        playerPickElem.innerText = "Player Selection";
+        computerPickElem.innerText = "Computer Selection";
+        playerResultElem.innerText = "Player Score";
+        computerResultElem.innerText = "Computer Score";
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -61,6 +63,7 @@ function newGame() {
     player.score = computer.score = 0;
     gameState = 'started';
     setGameElements();
+    setGamePoints();
 
     playerNameElem.innerHTML = player.name;
      // This function has not been created yet
