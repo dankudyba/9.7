@@ -29,16 +29,20 @@ var newGameElem = document.getElementById('js-newGameElement'),
 function setGameElements() {
   switch(gameState) {
     case 'started':
-        newGameElem.style.display = 'none';
-        pickElem.style.display = 'block';
-        resultsElem.style.display = 'block';
-		  showWinner.style.display = 'none';
+		newGameElem.style.display = 'none';
+		pickElem.style.display = 'block';
+		resultsElem.style.display = 'block';
+		showWinner.style.display = 'none';
       break;
     case 'ended':
-        newGameBtn.innerText = 'Jeszcze raz';
-		  showWinner.style.display = 'block';
-		  playerPointsElem.innerHTML = 0;
-		  computerPointsElem.innerHTML = 0;
+		newGameBtn.innerText = 'Jeszcze raz';
+		showWinner.style.display = 'block';
+		playerPointsElem.innerHTML = 0;
+		computerPointsElem.innerHTML = 0;
+		playerPickElem.innerHTML = "Player Selection";
+		computerPickElem.innerHTML = "Computer Selection";
+		playerResultElem.innerText = "Player Score";
+		computerResultElem.innerText = "Computer Score";
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -61,7 +65,7 @@ function newGame() {
     player.score = computer.score = 0;
     gameState = 'started';
     setGameElements();
-
+	 setGamePoints();
     playerNameElem.innerHTML = player.name;
      // This function has not been created yet
   }
